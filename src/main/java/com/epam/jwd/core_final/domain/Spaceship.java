@@ -8,5 +8,4 @@ package com.epam.jwd.core_final.domain;
 public class Spaceship extends AbstractBaseEntity {
     //todo
 
-
 }
