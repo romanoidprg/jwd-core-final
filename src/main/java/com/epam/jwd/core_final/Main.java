@@ -11,7 +11,8 @@ import org.slf4j.LoggerFactory;
 
 public class Main {
 
-    final static Logger logger =LoggerFactory.getLogger(com.epam.jwd.core_final.Main.class);
+    final static Logger logger = LoggerFactory.getLogger(com.epam.jwd.core_final.Main.class);
+
     public static void main(String[] args) {
         Role role = Role.COMMANDER;
         try {
@@ -25,12 +26,12 @@ public class Main {
         } catch (UnknownEntityException e) {
 
         }
-        System.out.println("_" + ApplicationProperties.getInputRootDir() + "_");
-        System.out.println("_" + ApplicationProperties.getOutputRootDir() + "_");
-        System.out.println("_" + ApplicationProperties.getCrewFileName() + "_");
-        System.out.println("_" + ApplicationProperties.getMissionsFileName() + "_");
-        System.out.println("_" + ApplicationProperties.getSpaceshipsFileName() + "_");
-        System.out.println("_" + ApplicationProperties.getFileRefreshRate() + "_");
-        System.out.println("_" + ApplicationProperties.getDateTimeFormat() + "_");
+        logger.error("_" + ApplicationProperties.getInputRootDir() + "_");
+        logger.error("_" + ApplicationProperties.getOutputRootDir() + "_");
+        logger.error("_" + ApplicationProperties.getCrewFileName() + "_");
+        logger.error("_" + ApplicationProperties.getMissionsFileName() + "_");
+        logger.error("_" + ApplicationProperties.getSpaceshipsFileName() + "_");
+        logger.error("_" + ApplicationProperties.getFileRefreshRate() + "_");
+        logger.error("_" + ApplicationProperties.getDateTimeFormat() + "_");
     }
 }
