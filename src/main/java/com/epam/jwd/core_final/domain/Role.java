@@ -33,7 +33,7 @@ public enum Role implements BaseEntity {
      * @throws UnknownEntityException if such id does not exist
      */
     public static Role resolveRoleById(int id) throws UnknownEntityException {
-        Role role = Role.MISSION_SPECIALIST;
+        Role role = null;
         if (id > 0 && id < 5) {
             switch (id) {
                 case 1:
@@ -50,7 +50,7 @@ public enum Role implements BaseEntity {
                     break;
             }
         } else {
-            throw new UnknownEntityException("Such id doesn't exist");
+            throw new UnknownEntityException("Rank with id: " + String.valueOf(id));
 
         }
         return role;

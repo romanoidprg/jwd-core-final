@@ -7,3 +7,15 @@
 2021-01-04 13:11:14,194 ERROR [com.epam.jwd.core_final.Main] null
 2021-01-04 13:12:44,855 ERROR [com.epam.jwd.core_final.Main] null
 2021-01-04 13:25:00,966 ERROR [com.epam.jwd.core_final.Main] null
+2021-01-04 15:36:12,894 ERROR [com.epam.jwd.core_final.Main] null
+2021-01-04 15:43:43,540 ERROR [com.epam.jwd.core_final.Main] null
+2021-01-04 15:46:27,731 ERROR [com.epam.jwd.core_final.Main] null
+2021-01-04 16:42:00,422 ERROR [com.epam.jwd.core_final.Main] null
+2021-01-04 16:42:00,439 ERROR [com.epam.jwd.core_final.domain.ApplicationProperties] resources\application.properties (Системе не удается найти указанный путь)
+2021-01-04 16:42:00,439 ERROR [com.epam.jwd.core_final.domain.ApplicationProperties] resources\application.properties (Системе не удается найти указанный путь)
+2021-01-04 16:43:12,230 ERROR [com.epam.jwd.core_final.Main] null
+2021-01-04 16:44:26,897 ERROR [com.epam.jwd.core_final.Main] null
+2021-01-04 16:45:44,157 ERROR [com.epam.jwd.core_final.Main] null
+2021-01-04 17:01:35,714 ERROR [com.epam.jwd.core_final.Main] null
+2021-01-04 17:06:21,067 ERROR [com.epam.jwd.core_final.Main] null
+2021-01-04 17:10:44,940 ERROR [com.epam.jwd.core_final.Main] null

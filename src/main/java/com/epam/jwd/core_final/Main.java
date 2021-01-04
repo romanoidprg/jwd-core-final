@@ -1,8 +1,10 @@
 package com.epam.jwd.core_final;
 
 import com.epam.jwd.core_final.context.Application;
+import com.epam.jwd.core_final.domain.ApplicationProperties;
 import com.epam.jwd.core_final.domain.Role;
 import com.epam.jwd.core_final.exception.InvalidStateException;
+import com.epam.jwd.core_final.exception.UnknownEntityException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,7 +20,17 @@ public class Main {
             logger.error(e.getMessage());
         }
 
-        System.out.println(role.resolveRoleById(1));
-        System.out.println(role.getName());
+        try {
+            System.out.println(role.resolveRoleById(8));
+        } catch (UnknownEntityException e) {
+
+        }
+        System.out.println("_" + ApplicationProperties.getInputRootDir() + "_");
+        System.out.println("_" + ApplicationProperties.getOutputRootDir() + "_");
+        System.out.println("_" + ApplicationProperties.getCrewFileName() + "_");
+        System.out.println("_" + ApplicationProperties.getMissionsFileName() + "_");
+        System.out.println("_" + ApplicationProperties.getSpaceshipsFileName() + "_");
+        System.out.println("_" + ApplicationProperties.getFileRefreshRate() + "_");
+        System.out.println("_" + ApplicationProperties.getDateTimeFormat() + "_");
     }
 }
