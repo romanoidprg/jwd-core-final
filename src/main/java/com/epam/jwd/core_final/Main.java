@@ -8,13 +8,17 @@ import org.slf4j.LoggerFactory;
 
 
 public class Main {
+
     final static Logger logger =LoggerFactory.getLogger(com.epam.jwd.core_final.Main.class);
     public static void main(String[] args) {
+        Role role = Role.COMMANDER;
         try {
             Application.start();
         } catch (InvalidStateException e) {
             logger.error(e.getMessage());
         }
-        System.out.println(Role.resolveRoleById(1));
+
+        System.out.println(role.resolveRoleById(1));
+        System.out.println(role.getName());
     }
 }
