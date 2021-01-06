@@ -12,14 +12,21 @@ public class CrewMember extends AbstractBaseEntity {
     private Role role;
     private Rank rank;
     private boolean isReadyForNextMissions;
-    private final String memberName;
 
-    public CrewMember(Role role, String memberName, Rank rank) {
+    public CrewMember(Role role, String name, Rank rank) {
         this.role = role;
         this.rank = rank;
         isReadyForNextMissions = true;
-        this.memberName = memberName;
+        this.name = name;
     }
+    public CrewMember(String member) {
+        this.role = Role.resolveRoleById(Integer.parseInt(String.valueOf(member.charAt(0))));
+        this.rank = Rank.resolveRankById(Integer.parseInt(String.valueOf(member.charAt(member.length()-1))));
+        isReadyForNextMissions = true;
+        this.name = (String) member.subSequence(2, member.length()-3);
+    }
+
+
 
     public Role getRole() {
         return role;
@@ -43,9 +50,5 @@ public class CrewMember extends AbstractBaseEntity {
 
     public void setReadyForNextMissions(boolean readyForNextMissions) {
         isReadyForNextMissions = readyForNextMissions;
-    }
-
-    public String getMemberName() {
-        return memberName;
     }
 }

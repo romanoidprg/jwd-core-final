@@ -15,12 +15,9 @@
     </Appenders>
 
     <loggers>
-        <root  level="error">
+        <root level="info">
             <AppenderRef ref="RollingFile"/>
         </root>
-        <logger  name="com.epam.jwd.core_final.domain.ApplicationProperties" level="error">
-            <AppenderRef ref="RollingFile"/>
-        </logger>
     </loggers>
 
 </Configuration>

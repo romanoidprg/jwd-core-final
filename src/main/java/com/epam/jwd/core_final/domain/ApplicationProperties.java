@@ -1,9 +1,8 @@
 package com.epam.jwd.core_final.domain;
 
+import com.epam.jwd.core_final.util.PropertyReaderUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.*;
 
 /**
  * This class should be IMMUTABLE!
@@ -21,46 +20,32 @@ import java.io.*;
  */
 public class ApplicationProperties {
     //todo
-    private static String inputRootDir;
-    private static String outputRootDir;
-    private static String crewFileName;
-    private static String missionsFileName;
-    private static String spaceshipsFileName;
+    private static final String inputRootDir;
+    private static final String outputRootDir;
+    private static final String crewFileName;
+    private static final String missionsFileName;
+    private static final String spaceshipsFileName;
     private static Integer fileRefreshRate;
-    private static String dateTimeFormat;
-    final static Logger logger = LoggerFactory.getLogger(ApplicationProperties.class);
+    private static final String dateTimeFormat;
+    private static final Logger logger = LoggerFactory.getLogger(ApplicationProperties.class);
 
     static {
-
+        PropertyReaderUtil.loadProperties();
+        inputRootDir = PropertyReaderUtil.readProperties().getProperty("inputRootDir");
+        outputRootDir = PropertyReaderUtil.readProperties().getProperty("outputRootDir");
+        crewFileName = PropertyReaderUtil.readProperties().getProperty("crewFileName");
+        missionsFileName = PropertyReaderUtil.readProperties().getProperty("missionsFileName");
+        spaceshipsFileName = PropertyReaderUtil.readProperties().getProperty("spaceshipsFileName");
         try {
-            FileInputStream file = new FileInputStream("src/main/resources/application.properties");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(file));
-            String s;
-            for (int i = 0; i < 10; i++) {
-
-                s = reader.readLine();
-                if (s.contains("inputRootDir"))
-                    inputRootDir = s.substring(13);
-                else if (s.contains("outputRootDir"))
-                    outputRootDir = s.substring(14);
-                else if (s.contains("crewFileName"))
-                    crewFileName = s.substring(13);
-                else if (s.contains("missionsFileName"))
-                    missionsFileName = s.substring(17);
-                else if (s.contains("spaceshipsFileName"))
-                    spaceshipsFileName = s.substring(19);
-                else if (s.contains("fileRefreshRate"))
-                    fileRefreshRate = Integer.valueOf(s.substring(16));
-                else if (s.contains("dateTimeFormat"))
-                    dateTimeFormat = s.substring(15);
-            }
-            reader.close();
-        } catch (FileNotFoundException e) {
+            fileRefreshRate = Integer.parseInt(PropertyReaderUtil.readProperties().getProperty("fileRefreshRate"));
+        } catch (NumberFormatException e){
             logger.error(e.getMessage());
-        } catch (IOException e) {
-            logger.error(e.getMessage());
+            fileRefreshRate = 60;
         }
+        dateTimeFormat = PropertyReaderUtil.readProperties().getProperty("dateTimeFormat");
+    }
 
+    private ApplicationProperties() {
     }
 
     public static String getInputRootDir() {
