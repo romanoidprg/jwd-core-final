@@ -4,6 +4,8 @@ import com.epam.jwd.core_final.util.PropertyReaderUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+
 /**
  * This class should be IMMUTABLE!
  * <p>
@@ -20,8 +22,8 @@ import org.slf4j.LoggerFactory;
  */
 public class ApplicationProperties {
     //todo
-    private static final String inputRootDir;
-    private static final String outputRootDir;
+    private static String inputRootDir = "src\\main\\resources\\";
+    private static String outputRootDir = "src\\main\\resources\\";
     private static final String crewFileName;
     private static final String missionsFileName;
     private static final String spaceshipsFileName;
@@ -31,14 +33,17 @@ public class ApplicationProperties {
 
     static {
         PropertyReaderUtil.loadProperties();
-        inputRootDir = PropertyReaderUtil.readProperties().getProperty("inputRootDir");
-        outputRootDir = PropertyReaderUtil.readProperties().getProperty("outputRootDir");
-        crewFileName = PropertyReaderUtil.readProperties().getProperty("crewFileName");
-        missionsFileName = PropertyReaderUtil.readProperties().getProperty("missionsFileName");
-        spaceshipsFileName = PropertyReaderUtil.readProperties().getProperty("spaceshipsFileName");
+        inputRootDir += PropertyReaderUtil.readProperties().getProperty("inputRootDir");
+        outputRootDir += PropertyReaderUtil.readProperties().getProperty("outputRootDir");
+        crewFileName = inputRootDir + File.separatorChar
+                + PropertyReaderUtil.readProperties().getProperty("crewFileName");
+        missionsFileName = outputRootDir + File.separatorChar
+                + PropertyReaderUtil.readProperties().getProperty("missionsFileName");
+        spaceshipsFileName = inputRootDir + File.separatorChar
+                + PropertyReaderUtil.readProperties().getProperty("spaceshipsFileName");
         try {
             fileRefreshRate = Integer.parseInt(PropertyReaderUtil.readProperties().getProperty("fileRefreshRate"));
-        } catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             logger.error(e.getMessage());
             fileRefreshRate = 60;
         }
@@ -46,14 +51,6 @@ public class ApplicationProperties {
     }
 
     private ApplicationProperties() {
-    }
-
-    public static String getInputRootDir() {
-        return inputRootDir;
-    }
-
-    public static String getOutputRootDir() {
-        return outputRootDir;
     }
 
     public static String getCrewFileName() {
@@ -66,13 +63,5 @@ public class ApplicationProperties {
 
     public static String getSpaceshipsFileName() {
         return spaceshipsFileName;
-    }
-
-    public static Integer getFileRefreshRate() {
-        return fileRefreshRate;
-    }
-
-    public static String getDateTimeFormat() {
-        return dateTimeFormat;
     }
 }

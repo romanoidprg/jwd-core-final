@@ -1,21 +1,8 @@
-2021-01-06 10:31:52,152 INFO [com.epam.jwd.core_final.Main] _60_
-2021-01-06 10:31:52,195 INFO [com.epam.jwd.core_final.Main] _yyyy-MM-dd HH:mm:ss_
-2021-01-06 10:31:52,197 INFO [com.epam.jwd.core_final.Main] com.epam.jwd.core_final.criteria.CrewMemberCriteria@7364985f
-2021-01-06 10:35:05,007 ERROR [com.epam.jwd.core_final.Main] null
-2021-01-06 10:35:05,033 INFO [com.epam.jwd.core_final.Main] _input_
-2021-01-06 10:35:05,034 INFO [com.epam.jwd.core_final.Main] _output_
-2021-01-06 10:35:05,034 INFO [com.epam.jwd.core_final.Main] _crew_
-2021-01-06 10:35:05,035 INFO [com.epam.jwd.core_final.Main] _missions_
-2021-01-06 10:35:05,035 INFO [com.epam.jwd.core_final.Main] _spaceships_
-2021-01-06 10:35:05,035 INFO [com.epam.jwd.core_final.Main] _60_
-2021-01-06 10:35:05,036 INFO [com.epam.jwd.core_final.Main] _yyyy-MM-dd HH:mm:ss_
-2021-01-06 10:35:05,038 INFO [com.epam.jwd.core_final.Main] com.epam.jwd.core_final.criteria.CrewMemberCriteria@78a2da20
-2021-01-06 10:37:14,833 ERROR [com.epam.jwd.core_final.Main] null
-2021-01-06 10:37:14,870 INFO [com.epam.jwd.core_final.Main] _input_
-2021-01-06 10:37:14,870 INFO [com.epam.jwd.core_final.Main] _output_
-2021-01-06 10:37:14,870 INFO [com.epam.jwd.core_final.Main] _crew_
-2021-01-06 10:37:14,871 INFO [com.epam.jwd.core_final.Main] _missions_
-2021-01-06 10:37:14,871 INFO [com.epam.jwd.core_final.Main] _spaceships_
-2021-01-06 10:37:14,871 INFO [com.epam.jwd.core_final.Main] _60_
-2021-01-06 10:37:14,871 INFO [com.epam.jwd.core_final.Main] _yyyy-MM-dd HH:mm:ss_
-2021-01-06 10:37:14,872 INFO [com.epam.jwd.core_final.Main] com.epam.jwd.core_final.criteria.CrewMemberCriteria@78a2da20
+2021-01-10 22:54:32,623 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Eesha Cuevas is already assigned with another mission.
+2021-01-10 22:54:32,633 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Isabelle Person is already assigned with another mission.
+2021-01-10 22:54:32,634 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Eesha Cuevas is already assigned with another mission.
+2021-01-10 22:54:32,634 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Kaja Rogers is already assigned with another mission.
+2021-01-10 22:54:32,634 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Om Currie is already assigned with another mission.
+2021-01-10 22:54:32,636 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Sally Gonzales is already assigned with another mission.
+2021-01-10 22:54:32,636 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Kaja Rogers is already assigned with another mission.
+2021-01-10 22:54:32,636 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Anas Mcfarlane is already assigned with another mission.

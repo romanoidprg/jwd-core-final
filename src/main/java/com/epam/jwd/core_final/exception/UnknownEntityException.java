@@ -23,6 +23,7 @@ public class UnknownEntityException extends RuntimeException {
     public String getMessage() {
         // todo
         // you should use entityName, args (if necessary)
-        return entityName + (args==null?"  ":("  with args "+ Arrays.toString(args) + "  ")) + "doesn't exist.";
+        return entityName + (args == null ? "  " : ("  with parameters "
+                + Arrays.toString(args) + "  ")) + "cann't be created";
     }
 }

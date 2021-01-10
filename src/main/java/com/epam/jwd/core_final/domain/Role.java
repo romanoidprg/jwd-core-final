@@ -51,7 +51,6 @@ public enum Role implements BaseEntity {
             }
         } else {
             throw new UnknownEntityException("Rank with id: " + String.valueOf(id));
-
         }
         return role;
     }

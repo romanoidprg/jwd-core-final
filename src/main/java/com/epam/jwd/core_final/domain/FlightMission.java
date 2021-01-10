@@ -16,12 +16,60 @@ import java.util.List;
  */
 public class FlightMission extends AbstractBaseEntity {
     // todo
-    private LocalDate startDate;
-    private LocalDate endDate;
-    private Long distance;
-    private Spaceship assignedSpaceSheep;
-    private List<CrewMember> assignedCrew;
+    private static Long counter = 1L;
+    private final LocalDate startDate;
+    private final LocalDate endDate;
+    private final Long distance;
+    private final Spaceship assignedSpaceSheep;
+    private final List<CrewMember> assignedCrew;
     private MissionResult missionResult;
 
+    public FlightMission(String name, LocalDate startDate,
+                         LocalDate endDate,
+                         Long distance,
+                         Spaceship assignedSpaceSheep,
+                         List<CrewMember> assignedCrew) {
+        this.id = counter++;
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.distance = distance;
+        this.assignedSpaceSheep = assignedSpaceSheep;
+        this.assignedCrew = assignedCrew;
+        this.missionResult = MissionResult.PLANNED;
+    }
 
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public Long getDistance() {
+        return distance;
+    }
+
+    public Spaceship getAssignedSpaceShip() {
+        return assignedSpaceSheep;
+    }
+
+    public List<CrewMember> getAssignedCrew() {
+        return assignedCrew;
+    }
+
+    public MissionResult getMissionResult() {
+        return missionResult;
+    }
+
+    public void setMissionResult(MissionResult missionResult) {
+        this.missionResult = missionResult;
+    }
+
+    @Override
+    public String toString() {
+        return id + " " + name + " " + startDate + " " + endDate + " "
+                + distance + " " + assignedSpaceSheep + " " + assignedCrew + " " + missionResult;
+    }
 }

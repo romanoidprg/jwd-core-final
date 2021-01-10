@@ -33,24 +33,25 @@ public enum Rank implements BaseEntity {
      * @throws UnknownEntityException if such id does not exist
      */
     public static Rank resolveRankById(int id) {
-        Rank rank =  Enum.valueOf(Rank.class, "TRAINEE");
-        if (id>0 && id<5) {
+        Rank rank = Enum.valueOf(Rank.class, "TRAINEE");
+        if (id > 0 && id < 5) {
             switch (id) {
                 case 1:
                     rank = Enum.valueOf(Rank.class, "TRAINEE");
                     break;
                 case 2:
-                    rank =  Enum.valueOf(Rank.class, "SECOND_OFFICER");
+                    rank = Enum.valueOf(Rank.class, "SECOND_OFFICER");
                     break;
                 case 3:
-                    rank =  Enum.valueOf(Rank.class, "FIRST_OFFICER");
+                    rank = Enum.valueOf(Rank.class, "FIRST_OFFICER");
                     break;
                 case 4:
-                    rank =  Enum.valueOf(Rank.class, "CAPTAIN");
+                    rank = Enum.valueOf(Rank.class, "CAPTAIN");
                     break;
             }
         } else {
             throw new UnknownEntityException("Rank with id: " + String.valueOf(id));
         }
-        return  rank;    }
+        return rank;
+    }
 }

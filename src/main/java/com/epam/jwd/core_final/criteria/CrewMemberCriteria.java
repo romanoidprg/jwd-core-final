@@ -8,35 +8,39 @@ import com.epam.jwd.core_final.domain.Role;
  * Should be a builder for {@link com.epam.jwd.core_final.domain.CrewMember} fields
  */
 public class CrewMemberCriteria extends Criteria<CrewMember> {
-    private final Role role;
-    private final Rank rank;
-    private final boolean isReadyForNextMissions;
+    private Role role;
+    private Rank rank;
+    private boolean isReadyForNextMissions;
 
-    private CrewMemberCriteria(Builder builder){
-        role = builder.role;
-        rank = builder.rank;
-        isReadyForNextMissions = builder.isReadyForNextMissions;
+    private CrewMemberCriteria() {
     }
 
-    public static class Builder{
-        private Role role;
-        private Rank rank;
-        private boolean isReadyForNextMissions;
+    public static Builder newBuilder() {
+        return new CrewMemberCriteria().new Builder();
+    }
+
+    public class Builder extends BaseEntityBuilder {
+        private Builder() {
+        }
 
         public Builder whereRoleIs(Role role) {
-            this.role = role;
+            CrewMemberCriteria.this.role = role;
             return this;
         }
+
         public Builder whereRankIs(Rank rank) {
-            this.rank = rank;
+            CrewMemberCriteria.this.rank = rank;
             return this;
         }
+
         public Builder readyForNextMissionsIs(boolean isReady) {
-            this.isReadyForNextMissions = isReady;
+            CrewMemberCriteria.this.isReadyForNextMissions = isReady;
             return this;
         }
-        public CrewMemberCriteria build(){
-            return new CrewMemberCriteria(this);
+
+        @Override
+        public CrewMemberCriteria build() {
+            return CrewMemberCriteria.this;
         }
     }
 
