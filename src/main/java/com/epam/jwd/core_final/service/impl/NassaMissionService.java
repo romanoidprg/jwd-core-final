@@ -58,7 +58,7 @@ public class NassaMissionService implements MissionService {
 
     @Override
     public Optional<FlightMission> findMissionByCriteria(Criteria<? extends FlightMission> criteria) {
-        return Optional.empty();
+        return findAllMissionsByCriteria(criteria).stream().findAny();
     }
 
     @Override

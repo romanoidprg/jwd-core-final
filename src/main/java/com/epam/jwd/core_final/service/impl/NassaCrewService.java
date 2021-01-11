@@ -52,7 +52,7 @@ public class NassaCrewService implements CrewService {
 
     @Override
     public Optional<CrewMember> findCrewMemberByCriteria(Criteria<? extends CrewMember> criteria) {
-        return Optional.empty();
+        return findAllCrewMembersByCriteria(criteria).stream().findAny();
     }
 
     @Override

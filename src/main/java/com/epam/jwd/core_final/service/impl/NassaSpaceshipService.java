@@ -55,7 +55,7 @@ public class NassaSpaceshipService implements SpaceshipService {
 
     @Override
     public Optional<Spaceship> findSpaceshipByCriteria(Criteria<? extends Spaceship> criteria) {
-        return Optional.empty();
+        return findAllSpaceshipsByCriteria(criteria).stream().findAny();
     }
 
     @Override
