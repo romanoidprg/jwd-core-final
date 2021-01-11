@@ -10,7 +10,6 @@ import com.epam.jwd.core_final.exception.BaseEntityIsAssignedException;
 import com.epam.jwd.core_final.exception.BaseEntityIsFailedException;
 import com.epam.jwd.core_final.exception.UnknownEntityException;
 import com.epam.jwd.core_final.service.CrewService;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

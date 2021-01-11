@@ -1,7 +1,6 @@
 package com.epam.jwd.core_final.domain;
 
 import com.epam.jwd.core_final.exception.UnknownEntityException;
-
 import java.util.regex.Pattern;
 
 /**

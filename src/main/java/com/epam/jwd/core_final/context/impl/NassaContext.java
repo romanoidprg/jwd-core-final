@@ -1,11 +1,14 @@
 package com.epam.jwd.core_final.context.impl;
 
 import com.epam.jwd.core_final.context.ApplicationContext;
-import com.epam.jwd.core_final.domain.*;
+import com.epam.jwd.core_final.domain.ApplicationProperties;
+import com.epam.jwd.core_final.domain.BaseEntity;
+import com.epam.jwd.core_final.domain.CrewMember;
+import com.epam.jwd.core_final.domain.FlightMission;
+import com.epam.jwd.core_final.domain.Spaceship;
 import com.epam.jwd.core_final.exception.InvalidStateException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -57,7 +60,7 @@ public class NassaContext implements ApplicationContext {
             while (scanner.hasNext()) {
                 crewMembers.add(new CrewMember(scanner.next()));
                 if (crewMembers.contains(null))
-                    throw new InvalidStateException();
+                    throw new InvalidStateException(file);
             }
             scanner.close();
         } catch (FileNotFoundException e) {
@@ -75,7 +78,7 @@ public class NassaContext implements ApplicationContext {
             while (scanner.hasNext()) {
                 spaceships.add(new Spaceship(scanner.nextLine()));
                 if (spaceships.contains(null))
-                    throw new InvalidStateException();
+                    throw new InvalidStateException(file);
             }
             scanner.close();
         } catch (FileNotFoundException e) {

@@ -6,7 +6,6 @@ import com.epam.jwd.core_final.criteria.FlightMissionCriteria;
 import com.epam.jwd.core_final.domain.FlightMission;
 import com.epam.jwd.core_final.exception.BaseEntityAlreadyExistException;
 import com.epam.jwd.core_final.service.MissionService;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

@@ -3,7 +3,6 @@ package com.epam.jwd.core_final.domain;
 import com.epam.jwd.core_final.util.PropertyReaderUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.io.File;
 
 /**
