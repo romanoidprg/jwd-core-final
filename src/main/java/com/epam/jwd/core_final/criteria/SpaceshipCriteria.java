@@ -20,22 +20,27 @@ public class SpaceshipCriteria extends Criteria<Spaceship> {
         return new SpaceshipCriteria().new Builder();
     }
 
-    public class Builder extends BaseEntityBuilder {
+    public class Builder extends BaseEntityBuilder<Builder> {
         private Builder() {
         }
 
         public Builder whereCrewIs(Map<Role, Short> crew) {
             SpaceshipCriteria.this.crew = crew;
-            return this;
+            return returnBuilder();
         }
 
         public Builder whereFlightDistanceIs(Long flightDistance) {
             SpaceshipCriteria.this.flightDistance = flightDistance;
-            return this;
+            return returnBuilder();
         }
 
         public Builder readyForNextMissionsIs(boolean isReady) {
             SpaceshipCriteria.this.isReadyForNextMissions = isReady;
+            return returnBuilder();
+        }
+
+        @Override
+        public Builder returnBuilder() {
             return this;
         }
 

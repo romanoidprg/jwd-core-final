@@ -19,28 +19,33 @@ public class CrewMemberCriteria extends Criteria<CrewMember> {
         return new CrewMemberCriteria().new Builder();
     }
 
-    public class Builder extends BaseEntityBuilder {
+    public class Builder extends BaseEntityBuilder<Builder> {
         private Builder() {
         }
 
         public Builder whereRoleIs(Role role) {
             CrewMemberCriteria.this.role = role;
-            return this;
+            return returnBuilder();
         }
 
         public Builder whereRankIs(Rank rank) {
             CrewMemberCriteria.this.rank = rank;
-            return this;
+            return returnBuilder();
         }
 
         public Builder readyForNextMissionsIs(boolean isReady) {
             CrewMemberCriteria.this.isReadyForNextMissions = isReady;
-            return this;
+            return returnBuilder();
         }
 
         @Override
         public CrewMemberCriteria build() {
             return CrewMemberCriteria.this;
+        }
+
+        @Override
+        public Builder returnBuilder() {
+            return this;
         }
     }
 

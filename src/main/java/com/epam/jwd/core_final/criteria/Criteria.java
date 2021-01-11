@@ -12,18 +12,19 @@ public abstract class Criteria<T extends BaseEntity> {
     protected Criteria() {
     }
 
-    protected abstract class BaseEntityBuilder {
-        public <E extends BaseEntityBuilder> E whereIdIs(Long id) {
+    protected abstract class BaseEntityBuilder<E extends BaseEntityBuilder<E>> {
+        public E whereIdIs(Long id) {
             Criteria.this.id = id;
-            return (E) this;
+            return returnBuilder();
         }
 
-        public <E extends BaseEntityBuilder> E whereNameIs(String name) {
+        public E whereNameIs(String name) {
             Criteria.this.name = name;
-            return (E) this;
+            return returnBuilder();
         }
 
         public abstract Criteria<T> build();
+        public abstract E returnBuilder();
     }
 
     public Long getId() {

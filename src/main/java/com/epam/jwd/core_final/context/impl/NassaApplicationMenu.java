@@ -23,6 +23,7 @@ import com.epam.jwd.core_final.service.impl.NassaMissionService;
 import com.epam.jwd.core_final.service.impl.NassaSpaceshipService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -83,9 +84,9 @@ public class NassaApplicationMenu implements ApplicationMenu {
         @Override
         public void process() {
             Criteria<CrewMember> crewMemberCriteria =
-                    CrewMemberCriteria.newBuilder().<CrewMemberCriteria.Builder>whereIdIs(id)
-                    .<CrewMemberCriteria.Builder>whereNameIs(name).whereRankIs(rank)
-                    .whereRoleIs(role).readyForNextMissionsIs(isReadyForNextMissions).build();
+                    CrewMemberCriteria.newBuilder().whereIdIs(id)
+                            .whereNameIs(name).whereRankIs(rank)
+                            .whereRoleIs(role).readyForNextMissionsIs(isReadyForNextMissions).build();
             for (CrewMember cm : nassaCrewService.findAllCrewMembersByCriteria(crewMemberCriteria)) {
                 System.out.println(cm.toString());
             }
@@ -97,9 +98,9 @@ public class NassaApplicationMenu implements ApplicationMenu {
         @Override
         public void process() {
             Criteria<Spaceship> spaceshipCriteria =
-                    SpaceshipCriteria.newBuilder().<SpaceshipCriteria.Builder>whereIdIs(id)
-                    .<SpaceshipCriteria.Builder>whereNameIs(name).whereFlightDistanceIs(flightDistance)
-                    .readyForNextMissionsIs(isReadyForNextMissions).build();
+                    SpaceshipCriteria.newBuilder().whereIdIs(id)
+                            .whereNameIs(name).whereFlightDistanceIs(flightDistance)
+                            .readyForNextMissionsIs(isReadyForNextMissions).build();
             for (Spaceship s : nassaSpaceshipService.findAllSpaceshipsByCriteria(spaceshipCriteria)) {
                 System.out.println(s.toString());
             }
@@ -110,7 +111,8 @@ public class NassaApplicationMenu implements ApplicationMenu {
     private final ElementMenuProcess enterIdProcess = new ElementMenuProcess() {
         @Override
         public void process() {
-            id = Long.getLong(inputParameter(scanner, "[0-9]{1,}"));
+            s = inputParameter(scanner, "[0-9]{1,}");
+            id = s == null ? null : Long.valueOf(s);
         }
     };
 

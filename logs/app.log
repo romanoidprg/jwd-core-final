@@ -1,8 +1,5 @@
-2021-01-10 22:54:32,623 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Eesha Cuevas is already assigned with another mission.
-2021-01-10 22:54:32,633 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Isabelle Person is already assigned with another mission.
-2021-01-10 22:54:32,634 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Eesha Cuevas is already assigned with another mission.
-2021-01-10 22:54:32,634 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Kaja Rogers is already assigned with another mission.
-2021-01-10 22:54:32,634 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Om Currie is already assigned with another mission.
-2021-01-10 22:54:32,636 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Sally Gonzales is already assigned with another mission.
-2021-01-10 22:54:32,636 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Kaja Rogers is already assigned with another mission.
-2021-01-10 22:54:32,636 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Anas Mcfarlane is already assigned with another mission.
+2021-01-11 10:21:35,697 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Haleema Wills is already assigned with another mission.
+2021-01-11 10:21:35,712 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Neave Mustafa is already assigned with another mission.
+2021-01-11 10:21:35,712 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Nusaybah Buck is already assigned with another mission.
+2021-01-11 10:21:35,712 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Viktor Houghton is already assigned with another mission.
+2021-01-11 10:21:35,712 ERROR [com.epam.jwd.core_final.context.impl.NassaApplicationMenu] CrewMember Jesse Thomson is already assigned with another mission.

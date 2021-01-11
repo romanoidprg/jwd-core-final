@@ -23,37 +23,42 @@ public class FlightMissionCriteria extends Criteria<FlightMission> {
         return new FlightMissionCriteria().new Builder();
     }
 
-    public class Builder extends BaseEntityBuilder {
+    public class Builder extends BaseEntityBuilder<Builder> {
         private Builder() {
         }
 
         public Builder whereStartDateIs(LocalDate date) {
             FlightMissionCriteria.this.startDate = date;
-            return this;
+            return returnBuilder();
         }
 
         public Builder whereEndDateIs(LocalDate date) {
             FlightMissionCriteria.this.endDate = date;
-            return this;
+            return returnBuilder();
         }
 
         public Builder whereDistanceIs(Long distance) {
             FlightMissionCriteria.this.distance = distance;
-            return this;
+            return returnBuilder();
         }
 
         public Builder whereAssignedSpaceSheepIs(Spaceship spaceSheep) {
             FlightMissionCriteria.this.assignedSpaceSheep = spaceSheep;
-            return this;
+            return returnBuilder();
         }
 
         public Builder whereAssignedCrewIs(List<CrewMember> crew) {
             FlightMissionCriteria.this.assignedCrew = crew;
-            return this;
+            return returnBuilder();
         }
 
         public Builder whereMissionResultIs(MissionResult missionResult) {
             FlightMissionCriteria.this.missionResult = missionResult;
+            return returnBuilder();
+        }
+
+        @Override
+        public Builder returnBuilder() {
             return this;
         }
 
